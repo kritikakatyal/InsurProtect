@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | InsurProtect</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #020617;
+            color: #f8fafc;
+            overflow-x: hidden;
+        }
+
+        #canvas-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: radial-gradient(circle at 50% 50%, #1e1b4b 0%, #020617 100%);
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .card-3d {
+            transform-style: preserve-3d;
+            transition: all 0.4s ease;
+        }
+
+        .card-3d:hover {
+            transform: translateY(-10px) rotateX(5deg) rotateY(5deg);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body>
+    <div id="canvas-container"></div>
+
+    <nav class="fixed top-0 w-full z-50 px-6 py-6">
+        <div class="max-w-6xl mx-auto flex justify-between items-center glass px-8 py-4 rounded-3xl">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center text-white">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <span class="font-extrabold text-2xl tracking-tight gradient-text">InsurProtect</span>
+            </div>
+            <div class="flex gap-8 items-center">
+                <a href="/" class="text-slate-300 hover:text-white transition-all font-semibold">Predictor</a>
+                <a href="/about" class="text-white font-bold border-b-2 border-blue-500">About Project</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="h-screen flex flex-col justify-center items-center px-6 relative">
+        <div class="text-center z-10" id="hero-content">
+            <span class="wow-badge text-[10px] px-3 py-1 rounded-full font-bold uppercase tracking-widest mb-6 inline-block">Predictive Healthcare Analysis</span>
+            <h1 class="text-6xl md:text-8xl font-extrabold mb-8 leading-tight">
+                Secure Your<br><span class="gradient-text">Financial Future</span>
+            </h1>
+            <p class="text-xl text-slate-400 max-w-3xl mx-auto mb-12 leading-relaxed">
+                A professional project designed to bring transparency to medical insurance forecasting.
+            </p>
+        </div>
+        <div class="absolute bottom-10 scroll-indicator text-blue-400 text-3xl">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <main class="container mx-auto px-6 pb-20">
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch mb-32">
+            <div class="glass p-10 rounded-[3rem] card-3d border-blue-500/30 flex flex-col justify-between">
+                <div>
+                    <h2 class="text-3xl font-extrabold mb-8 gradient-text">Project Methodology</h2>
+                    <div class="space-y-6">
+                        <div class="flex gap-5 items-start">
+                            <div class="w-10 h-10 glass rounded-xl flex items-center justify-center text-blue-400 flex-shrink-0">
+                                <i class="fas fa-microchip text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold mb-1 text-slate-200">Random Forest Regressor</h4>
+                                <p class="text-sm text-slate-400 leading-relaxed">The core of InsurProtect is an optimized Random Forest Regressor using 500 decision trees to ensure stable and accurate predictions.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-5 items-start">
+                            <div class="w-10 h-10 glass rounded-xl flex items-center justify-center text-purple-400 flex-shrink-0">
+                                <i class="fas fa-vial text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold mb-1 text-slate-200">Training and Testing</h4>
+                                <p class="text-sm text-slate-400 leading-relaxed">The model was developed using an 80-20 split methodology, with 20 percent of data kept aside for rigorous testing.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-5 items-start">
+                            <div class="w-10 h-10 glass rounded-xl flex items-center justify-center text-emerald-400 flex-shrink-0">
+                                <i class="fas fa-tools text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-lg font-bold mb-1 text-slate-200">Feature Engineering</h4>
+                                <p class="text-sm text-slate-400 leading-relaxed">We enhanced the data by calculating BMI and adding interaction terms to understand deeper medical risks.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="glass p-10 rounded-[3rem] card-3d border-blue-500/30 flex flex-col items-center justify-center text-center relative overflow-hidden">
+                <div class="absolute inset-0 bg-blue-600/10 blur-[100px]"></div>
+                <div class="relative z-10">
+                    <span class="text-8xl font-black gradient-text mb-4 block">90.2%</span>
+                    <span class="text-2xl font-bold text-slate-300">Forecasting Accuracy</span>
+                    <p class="text-slate-500 mt-4 text-sm px-10">Reliable performance across all medical profiles</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-32">
+            <div class="glass p-10 rounded-[2.5rem] card-3d">
+                <h3 class="text-2xl font-bold mb-6 flex items-center gap-3 text-blue-400">
+                    Industry Transparency
+                </h3>
+                <p class="text-slate-400 leading-relaxed mb-6">
+                    Insurance pricing is often unclear. This project aims to show how specific health factors directly impact premium costs, helping users understand their financial commitments.
+                </p>
+            </div>
+            <div class="glass p-10 rounded-[2.5rem] card-3d">
+                <h3 class="text-2xl font-bold mb-6 flex items-center gap-3 text-purple-400">
+                    Predictive Health Planning
+                </h3>
+                <p class="text-slate-400 leading-relaxed mb-6">
+                    Beyond just a calculator, this tool helps in long term planning. Users can see how managing chronic conditions or lifestyle choices influences their insurance outlook.
+                </p>
+            </div>
+        </div>
+
+        <footer class="py-20 text-center border-t border-white/5">
+            <p class="text-slate-500 font-medium">Developed for PES University Project by Kritika Katyal</p>
+            <p class="text-slate-600 text-sm mt-2 tracking-widest uppercase">Section B Health SRN PES1PG25CA114</p>
+        </footer>
+    </main>
+
+    <script>
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.getElementById('canvas-container').appendChild(renderer.domElement);
+        const particlesGeometry = new THREE.BufferGeometry();
+        const positions = new Float32Array(2000 * 3);
+        for(let i = 0; i < 2000 * 3; i++) positions[i] = (Math.random() - 0.5) * 10;
+        particlesGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+        const particles = new THREE.Points(particlesGeometry, new THREE.PointsMaterial({ size: 0.015, color: '#2563eb', transparent: true, opacity: 0.5 }));
+        scene.add(particles);
+        camera.position.z = 3;
+        function animate() { requestAnimationFrame(animate); particles.rotation.y += 0.001; renderer.render(scene, camera); }
+        animate();
+        window.addEventListener('resize', () => { camera.aspect = window.innerWidth / window.innerHeight; camera.updateProjectionMatrix(); renderer.setSize(window.innerWidth, window.innerHeight); });
+
+        gsap.registerPlugin(ScrollTrigger);
+        gsap.from("#hero-content > *", { y: 50, opacity: 0, duration: 1.2, stagger: 0.3, ease: "power4.out" });
+        gsap.utils.toArray(".card-3d").forEach(card => {
+            gsap.from(card, { scrollTrigger: { trigger: card, start: "top 85%" }, y: 100, opacity: 0, duration: 1, ease: "power3.out" });
+        });
+    </script>
+</body>
+</html>

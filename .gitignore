@@ -1,0 +1,17 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+dist/
+build/
+.env
+.venv
+venv/
+env/
+*.joblib
+*.csv
+!model.joblib
+!model_columns.joblib
+!Medicalpremium.csv
